@@ -26,3 +26,15 @@ const game = {
 // console.table(game)
 // table for game doesn't show the data values, but I do see that each row as an array. 
 //console.dir(game)
+
+/*
+Exercise 3
+1. Add a new property to the `game` object. Let's call it "difficulty".
+2. Choose a value for "difficulty" that you think fits the game. Ex: "Easy", "Med" or "Hard". How would you assign it?
+
+
+Solve Exercise 3 here:*/
+
+game.difficulty = [ "advanced", "meduium", "low"]
+
+console.log(game.difficulty)
