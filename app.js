@@ -61,20 +61,54 @@ Exercise 4
 
 
 Solve Exercise 4 here:
-*/
+// */
 
-const chosenStarter = pokemon.find(p => p.starter === true);
-//.find() gives the first matching Pokémon where starter is true. 
-// Add this to the array by using .push 
+// const chosenStarter = pokemon.find(p => p.starter === true);
+// //.find() gives the first matching Pokémon where starter is true. 
+// // Add this to the array by using .push 
 
-game.party.push(chosenStarter);
-console.log(game.party)
+// game.party.push(chosenStarter);
+// console.log(game.party)
 
 //Note: Not game.chosenStarter, instead game.party becuase game.chosenStarter isn't an explicit variable that was assigned. I am only just using it as a temporary variable to:
 // 1) find the starter Pokemon in the pokemon array
 // 2) Store it in a variable that I am calling (chosenStarter)
 // User that variable to push the pokement into game.party 
 //-------------------------------
+
+/*
+Exercise 5
+1. Choose three more Pokémon from the `pokemon` array and add them to your party.
+2. Consider different attributes like 'type' or 'HP' for your selection. Which array method will you use to add them?
+
+Solve Exercise 5 here:
+*/
+//Declaring 1x
+const starterFiltered = pokemon.filter(p => p.starter === true);
+const starterChosen = starterFiltered.slice(0, 3); // building in at least 3 possible starters
+//Declaring type and Hp levels
+const chosenType = pokemon.filter(p => ['water', 'fire'].includes(p.type) && p.hp > 40);
+game.party.push(...starterChosen, ...chosenType); // Adding filtered Pokemon
+console.log(game.party);
+
+/* I am on the right track! I don't need to separate the hp, since I am just filter
+ on type but across each array, hp exists. So I can combine */ 
+ 
+//  game.party.push(chosenStarter); //Adding starter
+// console.log(game.party)
+// Exercise 5 printed successfully! 
+// ------------------------
+
+/*
+Exercise 6
+1. Set the `completed` property to true for gyms with a difficulty below 3.
+2. Think about how you'd loop through the `gyms` array to check and update the `completed` property.
+
+
+Solve Exercise 6 here:
+*/
+
+
 
 
 
