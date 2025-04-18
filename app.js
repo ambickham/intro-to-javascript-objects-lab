@@ -33,8 +33,21 @@ Exercise 3
 2. Choose a value for "difficulty" that you think fits the game. Ex: "Easy", "Med" or "Hard". How would you assign it?
 
 
-Solve Exercise 3 here:*/
+// Solve Exercise 3 here:*/
 
-game.difficulty = [ "advanced", "meduium", "low"]
+// game.difficulty = [ "advanced", "meduium", "low"]
 
-console.log(game.difficulty)
+// console.log(game.difficulty)
+// (3) ['advanced', 'meduium', 'low']
+// 0
+// : 
+// "advanced"
+// 1
+// : 
+// "meduium"
+// 2
+// : 
+// "low"
+// length
+// : 
+// 3
