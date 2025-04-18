@@ -15,9 +15,14 @@ const game = {
       { name: "pokeball", quantity: 8 },
       { name: "rare candy", quantity: 99 },
     ],
-  }
-  console.dir(pokemon, { maxArrayLength: null })
-//Command used in JS to inspect objects in detail.//
+   }
+//   console.dir(pokemon, { maxArrayLength: null })
+// //Command used in JS to inspect objects in detail.//
 
-console.log(pokemon.length)// Show data values of hte array
-console.table(pokemon) // Shows a readable table view of the array dataset
+// console.log(pokemon.length)// Show data values of hte array
+// console.table(pokemon) // Shows a readable table view of the array dataset
+// console.log(game)
+// // What I found: I see the total items in arrays in party, gyms, and items.
+// console.table(game)
+// table for game doesn't show the data values, but I do see that each row as an array. 
+//console.dir(game)
