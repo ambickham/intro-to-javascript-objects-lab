@@ -84,12 +84,12 @@ Exercise 5
 Solve Exercise 5 here:
 */
 //Declaring 1x
-const starterFiltered = pokemon.filter(p => p.starter === true);
-const starterChosen = starterFiltered.slice(0, 3); // building in at least 3 possible starters
-//Declaring type and Hp levels
-const chosenType = pokemon.filter(p => ['water', 'fire'].includes(p.type) && p.hp > 40);
-game.party.push(...starterChosen, ...chosenType); // Adding filtered Pokemon
-console.log(game.party);
+// const starterFiltered = pokemon.filter(p => p.starter === true);
+// const starterChosen = starterFiltered.slice(0, 3); // building in at least 3 possible starters
+// //Declaring type and Hp levels
+// const chosenType = pokemon.filter(p => ['water', 'fire'].includes(p.type) && p.hp > 40);
+// game.party.push(...starterChosen, ...chosenType); // Adding filtered Pokemon
+// console.log(game.party);
 
 /* I am on the right track! I don't need to separate the hp, since I am just filter
  on type but across each array, hp exists. So I can combine */ 
@@ -107,7 +107,16 @@ Exercise 6
 
 Solve Exercise 6 here:
 */
+const easyGyms = game.gyms.filter(gym => gym.difficulty < 3);
+easyGyms.forEach(gym => {
+  gym.completed = true;
+});
 
+console.log(game.gyms); // To see the updated gyms array
+
+  
+  
+  
 
 
 
