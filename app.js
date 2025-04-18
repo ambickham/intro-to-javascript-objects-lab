@@ -27,7 +27,7 @@ const game = {
 // table for game doesn't show the data values, but I do see that each row as an array. 
 //console.dir(game)
 
-/*
+/*----------------------------------------------------
 Exercise 3
 1. Add a new property to the `game` object. Let's call it "difficulty".
 2. Choose a value for "difficulty" that you think fits the game. Ex: "Easy", "Med" or "Hard". How would you assign it?
@@ -51,3 +51,30 @@ Exercise 3
 // length
 // : 
 // 3
+
+//---------------------------------
+
+/*
+Exercise 4
+1. Select a starter Pokémon from the `pokemon` array. Remember, a starter Pokémon's `starter` property is true.
+2. Add this Pokémon to the `game.party` array. Which array method will you use to add them?
+
+
+Solve Exercise 4 here:
+*/
+
+const chosenStarter = pokemon.find(p => p.starter === true);
+//.find() gives the first matching Pokémon where starter is true. 
+// Add this to the array by using .push 
+
+game.party.push(chosenStarter);
+console.log(game.party)
+
+//Note: Not game.chosenStarter, instead game.party becuase game.chosenStarter isn't an explicit variable that was assigned. I am only just using it as a temporary variable to:
+// 1) find the starter Pokemon in the pokemon array
+// 2) Store it in a variable that I am calling (chosenStarter)
+// User that variable to push the pokement into game.party 
+//-------------------------------
+
+
+
