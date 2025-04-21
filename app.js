@@ -84,22 +84,27 @@ Solve Exercise 4 here:
 // Solve Exercise 5 here:
 // */
 // //Declaring 1x
-// // const starterFiltered = pokemon.filter(p => p.starter === true);
-// // const starterChosen = starterFiltered.slice(0, 3); // building in at least 3 possible starters
-// // //Declaring type and Hp levels
-// // const chosenType = pokemon.filter(p => ['water', 'fire'].includes(p.type) && p.hp > 40);
-// // game.party.push(...starterChosen, ...chosenType); // Adding filtered Pokemon
-// // console.log(game.party);
+//  const starterFiltered = pokemon.filter(p => p.starter === true);
+// const starterChosen = starterFiltered.slice(0, 3); // building in at least 3 possible starters
+
+// //Declaring type and Hp levels
+// const chosenType = pokemon.filter(p => ['fire'].includes(p.type) && p.hp > 40);
+// game.party.push(...starterChosen, ...chosenType); // Adding filtered Pokemon
+// console.log(game.party);
 
 // /* I am on the right track! I don't need to separate the hp, since I am just filter
 //  on type but across each array, hp exists. So I can combine */ 
  
-// //  game.party.push(chosenStarter); //Adding starter
-// // console.log(game.party)
+//  game.party.push(chosenStarter); //Adding starter
+// console.log(game.party)
+
+// Printed Result or starter
+// {number: 1, name: 'Bulbasaur', type: 'grass', hp: 45, starter: true}: 
+// {number: 4, name: 'Charmander', type: 'fire', hp: 39, starter: true}
+// {number: 7, name: 'Squirtle', type: 'water', hp: 44, starter: true}
+
 // // Exercise 5 printed successfully! 
 // // ------------------------
-
-// /*
 // Exercise 6
 // 1. Set the `completed` property to true for gyms with a difficulty below 3.
 // 2. Think about how you'd loop through the `gyms` array to check and update the `completed` property.
@@ -115,44 +120,49 @@ Solve Exercise 4 here:
 // console.log(game.gyms); // To see the updated gyms array
 
   
-  /*
-Exercise 7
-1. Evolve the starter Pokémon you added to your party earlier. Each starter Pokémon evolves into a specific one.
-2. How would you replace the current starter Pokémon in your party with its evolved form?
 
-Hint: 
-  - Pokemon 1: Bulbasaur evolves into Pokemon 2: Ivysaur
-  - Pokemon 4: Charmander evolves into Pokemon 5: Charmeleon
-  - Pokemon 7: Squirtle evolves into Pokemon 8: Wartortle
-  - Pokemon 25: Pikachu evolves into Pokemon 26: Raichu
+// Exercise 7
+// 1. Evolve the starter Pokémon you added to your party earlier. Each starter Pokémon evolves into a specific one.
+// 2. How would you replace the current starter Pokémon in your party with its evolved form?
+// Hint: 
+  // - Pokemon 4: Charmander evolves into Pokemon 5: Charmeleon
+  // - Pokemon 1: Bulbasaur evolves into Pokemon 2: Ivysaur
+  // - Pokemon 7: Squirtle evolves into Pokemon 8: Wartortle
 
-More Hints: The existing starter Pokemon will be *replaced* in your party with the Pokemon it evolved into. 
-When working with an array of objects, the splice() array method is ideal for replacing one element with another. 
+// More Hints: The existing starter Pokemon will be *replaced* in your party with the Pokemon it evolved into. 
+// When working with an array of objects, the splice() array method is ideal for replacing one element with another. 
+// Solve Exercise 7 here:
 
+// Ashmeeta's starter party array From #5
+// let party = [
+//  {number: 1, name: 'Bulbasaur', type: 'grass', hp: 45, starter: true}: 
+//  {number: 4, name: 'Charmander', type: 'fire', hp: 39, starter: true}
+//  {number: 7, name: 'Squirtle', type: 'water', hp: 44, starter: true}
 
-Solve Exercise 7 here:
-*/
-
-// Sample starter party array (adjust if your starter is different)
+// Step 1: Evolve the starter Pokémon. (Charmander (id 4) evolves into Charmeleon (id 5))
 let party = [
-    { id: 4, name: 'Charmander', type: 'Fire' },
-    { id: 10, name: 'Caterpie', type: 'Bug' },
-    { id: 16, name: 'Pidgey', type: 'Flying' }
-  ];
-  
-  // Step 1: Evolve the starter Pokémon
-  // Charmander (id 4) evolves into Charmeleon (id 5)
-  let evolvedPokemon = { id: 5, name: 'Charmeleon', type: 'Fire' };
-  
-  // Step 2: Replace the starter Pokémon with its evolved form
-  // Find the index of Charmander
-  let index = party.findIndex(pokemon => pokemon.id === 4);
-  
-  // Replace with Charmeleon using splice()
+  {number: 4, name: 'Charmander', type: 'fire', hp: 39, starter: true},
+  {number: 1, name: 'Bulbasaur', type: 'grass', hp: 45, starter: true},
+  {number: 7, name: 'Squirtle', type: 'water', hp: 44, starter: true},
+]
+ //** I didn't see a ; at the end of the syntax, instead needed a ,  */ 
+// Step 2: Replace the starter Pokémon with its evolved form. Find the index of each 
+let evolvedPokemonList = [
+ { number: 5, name: 'Charmeleon', type: 'fire', hp: 39, starter: false},
+ { number: 2, name: 'Ivysaur', type: 'grass', hp: 60, starter: false},
+ { number: 8, name: 'Wartortle', type: 'water', hp: 59, starter: false},
+]
+
+// Step 3: loop through each evolved Pokémon to replace in the party array
+evolvedPokemonList.forEach(evolvedPokemon => {
+  let index = party.findIndex(pokemon => pokemon.type === evolvedPokemon.type);
   if (index !== -1) {
+    // replace old pokemond with it's evolved form
     party.splice(index, 1, evolvedPokemon);
-  }
-  
-  // Log the updated party
-  console.log(party);
-  
+  }  
+});
+// Step 4: Log the updated party
+
+ console.log(party);
+
+ /* Notes: Syntax and consistency errors
