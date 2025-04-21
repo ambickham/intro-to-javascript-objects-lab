@@ -248,39 +248,69 @@ Also, log the `game.items` array to confirm that the pokeball quantity is being 
 Solve Exercise 11 here:
 */
 // If game is already defined, don't redefine it
-game.party = [];
-game.items = [
-  { name: 'pokeball', quantity: 5 },
-  { name: 'potion', quantity: 2 }
-];
+// game.party = [];
+// game.items = [
+//   { name: 'pokeball', quantity: 5 },
+//   { name: 'potion', quantity: 2 }
+// ];
 
 
-game.catchPokemon = function(pokemonObj) {
-  // Add the Pokémon to party
-  this.party.push(pokemonObj);
+// game.catchPokemon = function(pokemonObj) {
+//   // Add the Pokémon to party
+//   this.party.push(pokemonObj);
 
-  // Find the pokeball item in the items array
-  const pokeballItem = this.items.find(item => item.name === 'pokeball');
-  console.log("Found pokeball item:", pokeballItem);
+//   // Find the pokeball item in the items array
+//   const pokeballItem = this.items.find(item => item.name === 'pokeball');
+//   console.log("Found pokeball item:", pokeballItem);
 
-  // If found, decrease its quantity
-  if (pokeballItem) {
-    pokeballItem.quantity--;
-  }
-};
+//   // If found, decrease its quantity
+//   if (pokeballItem) {
+//     pokeballItem.quantity--;
+//   }
+// };
 
-game.catchPokemon(pokemon[25]); // catch a Pokémon
-console.log("Party:", game.party);
-console.log("Items after catching:", game.items);
-
-
-game.catchPokemon(pokemon[2]); // catch a Pokémon
-console.log("Party:", game.party);
-console.log("Items after catching:", game.items);
+// game.catchPokemon(pokemon[25]); // catch a Pokémon
+// console.log("Party:", game.party);
+// console.log("Items after catching:", game.items);
 
 
-game.catchPokemon(pokemon[15]); // catch a Pokémon
-console.log("Party:", game.party);
-console.log("Items after catching:", game.items);
+// game.catchPokemon(pokemon[2]); // catch a Pokémon
+// console.log("Party:", game.party);
+// console.log("Items after catching:", game.items);
+
+
+// game.catchPokemon(pokemon[15]); // catch a Pokémon
+// console.log("Party:", game.party);
+// console.log("Items after catching:", game.items);
 
 // Successfully updated pokeballs 
+
+/*
+Exercise 12
+1. Similar to Exercise 6, now complete gyms with a difficulty below 6. How will you approach this?
+ (change the value of `complete` in the qualifying objects from false to true).
+
+Solve Exercise 12 here:
+*/
+
+// const easyGyms = game.gyms.filter(gyms => gyms.difficulty < 6);
+// easyGyms.forEach(gyms => {
+//   gyms.completed = true;
+// });
+//  console.log(easyGyms); // To see the updated gyms array
+//Printed Result
+//  : 
+//  {location: 'Pewter City', completed: true, difficulty: 1}
+//  1
+//  : 
+//  {location: 'Cerulean City', completed: true, difficulty: 2}
+//  2
+//  : 
+//  {location: 'Vermilion City', completed: true, difficulty: 3}
+//  3
+//  : 
+//  {location: 'Celadon City', completed: true, difficulty: 4}
+//  4
+//  : 
+//  {location: 'Fuchsia City', completed: true, difficulty: 5}
+
