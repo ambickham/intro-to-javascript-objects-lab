@@ -58,11 +58,8 @@ Exercise 3
 Exercise 4
 1. Select a starter Pokémon from the `pokemon` array. Remember, a starter Pokémon's `starter` property is true.
 2. Add this Pokémon to the `game.party` array. Which array method will you use to add them?
-
-
 Solve Exercise 4 here:
 // */
-
 // const chosenStarter = pokemon.find(p => p.starter === true);
 // //.find() gives the first matching Pokémon where starter is true. 
 // // Add this to the array by using .push 
@@ -176,6 +173,24 @@ Exercise 8
 Solve Exercise 8 here:
 */
 
-party.forEach(pokemon => {
-  console.log(pokemon.name)
-})
+// party.forEach(pokemon => {
+//   console.log(pokemon.name)
+// })
+// // Charmander
+//  Bulbasaur
+//  Squirtle
+
+/*
+Exercise 9
+1. Can you print out all the starter Pokémon from the `pokemon` array?
+2. Think about how you can identify a starter Pokémon and then log their names.
+Solve Exercise 9 here:
+*/
+
+/* would need to first filter to collect all starter pokemond
+then use the forEach function above to list their names?*/
+
+const starterPokemon = pokemon.filter(pokemon => pokemon.starter === true);
+starterPokemon.forEach(starterP => {
+  console.log(starterP.name)
+});
