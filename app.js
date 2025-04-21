@@ -145,24 +145,37 @@ let party = [
   {number: 1, name: 'Bulbasaur', type: 'grass', hp: 45, starter: true},
   {number: 7, name: 'Squirtle', type: 'water', hp: 44, starter: true},
 ]
- //** I didn't see a ; at the end of the syntax, instead needed a ,  */ 
-// Step 2: Replace the starter Pokémon with its evolved form. Find the index of each 
-let evolvedPokemonList = [
- { number: 5, name: 'Charmeleon', type: 'fire', hp: 39, starter: false},
- { number: 2, name: 'Ivysaur', type: 'grass', hp: 60, starter: false},
- { number: 8, name: 'Wartortle', type: 'water', hp: 59, starter: false},
-]
+//  //** I didn't see a ; at the end of the syntax, instead needed a ,  */ 
+// // Step 2: Replace the starter Pokémon with its evolved form. Find the index of each 
+// let evolvedPokemonList = [
+//  { number: 5, name: 'Charmeleon', type: 'fire', hp: 39, starter: false},
+//  { number: 2, name: 'Ivysaur', type: 'grass', hp: 60, starter: false},
+//  { number: 8, name: 'Wartortle', type: 'water', hp: 59, starter: false},
+// ]
 
-// Step 3: loop through each evolved Pokémon to replace in the party array
-evolvedPokemonList.forEach(evolvedPokemon => {
-  let index = party.findIndex(pokemon => pokemon.type === evolvedPokemon.type);
-  if (index !== -1) {
-    // replace old pokemond with it's evolved form
-    party.splice(index, 1, evolvedPokemon);
-  }  
-});
-// Step 4: Log the updated party
+// // Step 3: loop through each evolved Pokémon to replace in the party array
+// evolvedPokemonList.forEach(evolvedPokemon => {
+//   let index = party.findIndex(pokemon => pokemon.type === evolvedPokemon.type);
+//   if (index !== -1) {
+//     // replace old pokemond with it's evolved form
+//     party.splice(index, 1, evolvedPokemon);
+//   }  
+// });
+// // Step 4: Log the updated party
 
- console.log(party);
+//  console.log(party);
 
- /* Notes: Syntax and consistency errors
+//  /* Notes: Syntax and consistency errors
+// ------------------------------------
+
+/*
+Exercise 8
+1. Print the name of each Pokémon in your party.
+2. Consider using a loop or an array method to access each Pokémon's name.
+
+Solve Exercise 8 here:
+*/
+
+party.forEach(pokemon => {
+  console.log(pokemon.name)
+})
