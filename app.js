@@ -137,13 +137,13 @@ Solve Exercise 4 here:
 //  {number: 7, name: 'Squirtle', type: 'water', hp: 44, starter: true}
 
 // Step 1: Evolve the starter Pokémon. (Charmander (id 4) evolves into Charmeleon (id 5))
-let party = [
-  {number: 4, name: 'Charmander', type: 'fire', hp: 39, starter: true},
-  {number: 1, name: 'Bulbasaur', type: 'grass', hp: 45, starter: true},
-  {number: 7, name: 'Squirtle', type: 'water', hp: 44, starter: true},
-]
-//  //** I didn't see a ; at the end of the syntax, instead needed a ,  */ 
-// // Step 2: Replace the starter Pokémon with its evolved form. Find the index of each 
+// let party = [
+//   {number: 4, name: 'Charmander', type: 'fire', hp: 39, starter: true},
+//   {number: 1, name: 'Bulbasaur', type: 'grass', hp: 45, starter: true},
+//   {number: 7, name: 'Squirtle', type: 'water', hp: 44, starter: true},
+// ]
+// //  //** I didn't see a ; at the end of the syntax, instead needed a ,  */ 
+// // // Step 2: Replace the starter Pokémon with its evolved form. Find the index of each 
 // let evolvedPokemonList = [
 //  { number: 5, name: 'Charmeleon', type: 'fire', hp: 39, starter: false},
 //  { number: 2, name: 'Ivysaur', type: 'grass', hp: 60, starter: false},
@@ -187,10 +187,100 @@ Exercise 9
 Solve Exercise 9 here:
 */
 
-/* would need to first filter to collect all starter pokemond
-then use the forEach function above to list their names?*/
+// /* would need to first filter to collect all starter pokemond
+// then use the forEach function above to list their names?*/
 
-const starterPokemon = pokemon.filter(pokemon => pokemon.starter === true);
-starterPokemon.forEach(starterP => {
-  console.log(starterP.name)
-});
+// const starterPokemon = pokemon.filter(pokemon => pokemon.starter === true);
+// starterPokemon.forEach(starterP => {
+//   console.log(starterP.name)
+// });
+
+/*
+Exercise 10
+Create a method called `catchPokemon` and add it to the `game` object. You should not need to edit the original game object directly. This method should:
+  - Accept an object as a parameter called `pokemonObj`
+  - Add the `pokemonObj` to the `game.party` array.
+  - not return anything
+
+After writing this method, call it and pass in a Pokemon object of your choice from the `pokemon` data to catch it.
+
+Solve Exercise 10 here:
+*/
+// let game = {
+//   party: []
+// }
+
+// game.catchPokemon = function(pokemonObj) {
+//   this.party.push(pokemonObj);
+// };
+// //Is saying: "Hey, I’m adding a new function to the game object, and I’m calling that function catchPokemon."
+//function(pokemonObj) {
+  //this.party.push(pokemonObj);
+  // This function:
+  // Takes in one Pokémon object (pokemonObj)
+  // Adds it to the party list inside the game object
+  // The word this refers to the game object itself
+
+// /* this is where I want to automate the pokemon catch sequence */
+// function findAndCatch(number) {
+//   const foundPokemon = pokemon.find(p => p.number === number);
+//   if (foundPokemon) {
+//     game.catchPokemon(foundPokemon);
+//     console.log(`${foundPokemon.name} was caught!`)
+//   } else {
+//     console.log(`No Pokemon, sorry it got away!`);
+//   }
+// }
+// findAndCatch(50)
+//   // game.catchPokemon(pokemon[56]);
+//   // console.log(game.party); // You’ll see that Pokémon is now inside the party
+
+/*
+Exercise 11
+1. Copy the `catchPokemon` method that you just wrote above, and paste it below. Modify it so that it also decreases the number of pokeballs in your inventory each time you catch a Pokémon.
+2. How will you find and update the quantity of pokeballs in the `game.items` array?
+
+Tips:
+For this exercise, it's okay to have a negative number of pokeballs.
+After updating the method, call it and pass in a Pokemon object of your choice from the `pokemon` data to catch it.
+Also, log the `game.items` array to confirm that the pokeball quantity is being decremented.
+
+Solve Exercise 11 here:
+*/
+// If game is already defined, don't redefine it
+game.party = [];
+game.items = [
+  { name: 'pokeball', quantity: 5 },
+  { name: 'potion', quantity: 2 }
+];
+
+
+game.catchPokemon = function(pokemonObj) {
+  // Add the Pokémon to party
+  this.party.push(pokemonObj);
+
+  // Find the pokeball item in the items array
+  const pokeballItem = this.items.find(item => item.name === 'pokeball');
+  console.log("Found pokeball item:", pokeballItem);
+
+  // If found, decrease its quantity
+  if (pokeballItem) {
+    pokeballItem.quantity--;
+  }
+};
+
+game.catchPokemon(pokemon[25]); // catch a Pokémon
+console.log("Party:", game.party);
+console.log("Items after catching:", game.items);
+
+
+game.catchPokemon(pokemon[2]); // catch a Pokémon
+console.log("Party:", game.party);
+console.log("Items after catching:", game.items);
+
+
+game.catchPokemon(pokemon[15]); // catch a Pokémon
+console.log("Party:", game.party);
+console.log("Items after catching:", game.items);
+
+// Successfully updated pokeballs 
