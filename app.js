@@ -1,21 +1,21 @@
-const game = {
-    party: [],
-    gyms: [
-      { location: "Pewter City", completed: false, difficulty: 1 },
-      { location: "Cerulean City", completed: false, difficulty: 2 },
-      { location: "Vermilion City", completed: false, difficulty: 3 },
-      { location: "Celadon City", completed: false, difficulty: 4 },
-      { location: "Fuchsia City", completed: false, difficulty: 5 },
-      { location: "Saffron City", completed: false, difficulty: 6 },
-      { location: "Cinnabar Island", completed: false, difficulty: 7 },
-      { location: "Viridian City", completed: false, difficulty: 8 },
-    ],
-    items: [
-      { name: "potion", quantity: 4 },
-      { name: "pokeball", quantity: 8 },
-      { name: "rare candy", quantity: 99 },
-    ],
-   }
+// const game = {
+//     party: [],
+//     gyms: [
+//       { location: "Pewter City", completed: false, difficulty: 1 },
+//       { location: "Cerulean City", completed: false, difficulty: 2 },
+//       { location: "Vermilion City", completed: false, difficulty: 3 },
+//       { location: "Celadon City", completed: false, difficulty: 4 },
+//       { location: "Fuchsia City", completed: false, difficulty: 5 },
+//       { location: "Saffron City", completed: false, difficulty: 6 },
+//       { location: "Cinnabar Island", completed: false, difficulty: 7 },
+//       { location: "Viridian City", completed: false, difficulty: 8 },
+//     ],
+//     items: [
+//       { name: "potion", quantity: 4 },
+//       { name: "pokeball", quantity: 8 },
+//       { name: "rare candy", quantity: 99 },
+//     ],
+//    }
 //   console.dir(pokemon, { maxArrayLength: null })
 // //Command used in JS to inspect objects in detail.//
 
@@ -314,3 +314,144 @@ Solve Exercise 12 here:
 //  : 
 //  {location: 'Fuchsia City', completed: true, difficulty: 5}
 
+/*
+Exercise 13
+1. Create a `gymStatus` method in `game` to tally completed and incomplete gyms.
+2. How will you iterate through the `gyms` array and update the tally? Remember to log the final tally.
+
+This method should:
+  - Not accept any arguments.
+  - Initially create a constant `gymTally`, which is an object that has two 
+    properties: `completed` and `incomplete`, both of which are initially set to 0.
+  - Iterate through the objects in the `game.gyms` array and update the 
+    properties on `gymTally` as follows: 
+    - `completed` should count how many gyms in the array have a value of `true` 
+      for their `completed` property. 
+    - `incomplete` should count how many gyms in the array have a value of 
+      `false` for their `completed` property.
+  - Log the value of `gymTally`.
+  - The method should not return anything.
+
+For example, if five gym objects have a value of `true` on their `completed` property and three gym objects have a value of `false` on their `completed` property, the logged value would be: `{ completed: 5, incomplete: 3 }`.
+
+Solve Exercise 13 here:
+// */
+
+// game.gymStatus = function() {
+//   const gymTally = {
+//     completed: 0,
+//     incomplete: 0
+//   };
+
+//   this.gyms.forEach(gym => {
+//     if (gym.completed === true) {
+//       gymTally.completed++;
+//     } else {
+//       gymTally.incomplete++;
+//     }
+//   });
+
+//   console.log(gymTally);
+// };
+
+// game.gymStatus(); 
+// //  output: { completed: 5, incomplete: 3 }
+
+
+
+/* To count how many Pokémon are currently in your party.
+Accessing an array’s length.
+
+Creating a method in an object.
+
+Returning a value (instead of logging it).
+
+Using this to reference the object the method is inside of.
+Adds a method called partyCount to the game object.
+
+Uses this.party.length to count how many Pokémon are in the party.
+
+Returns that number (does not log it).
+Inside a method of an object, this refers to the object itself — so this.party is the same as game.party inside the method.
+
+/*
+Exercise 14
+1. Add a `partyCount` method to `game` that counts the number of Pokémon in your party.
+
+This method should:
+  - Not accept any arguments.
+  - Count the number of Pokemon in the party.
+  - return the found number of Pokemon in the party.
+
+Solve Exercise 14 here:
+*/
+
+
+const game = {
+  party: ['Pikachu', 'Charmander', 'Bulbasaur'], // Example Pokémon
+  partyCount: function() {
+    return this.party.length;
+  }
+};
+
+console.log(game.partyCount()); // Logged: 3
+
+
+
+// /*
+// Exercise 15
+// 1. Now, complete gyms with a difficulty below 8. Reflect on how this is similar to or different from the previous gym exercises.
+// (change the value of `complete` in the qualifying objects from false to true).
+
+// // Solve Exercise 15 here:
+// */
+// const game = {
+//   gyms: [
+//     { location: 'Pewter City', completed: false, difficulty: 1 },
+//     { location: 'Cerulean City', completed: false, difficulty: 2 },
+//     { location: 'Vermilion City', completed: false, difficulty: 3 },
+//     { location: 'Celadon City', completed: false, difficulty: 4 },
+//     { location: 'Fuchsia City', completed: false, difficulty: 5 },
+//     { location: 'Saffron City', completed: false, difficulty: 6 },
+//     { location: 'Cinnabar Island', completed: false, difficulty: 7 },
+//     { location: 'Viridian City', completed: false, difficulty: 8 }
+//   ],
+  
+//   gymStatus: function() {
+//     // Initialize tally
+//     const gymTally = {
+//       completed: 0,
+//       incomplete: 0
+//     };
+  
+//     // Iterate over each gym
+//     this.gyms.forEach(gym => {
+//       if (gym.completed === true) {
+//         gymTally.completed++;
+//       } else {
+//         gymTally.incomplete++;
+//       }
+//     });
+  
+//     // Log the result
+//     console.log(gymTally);
+//   }
+// };
+
+// // Update gyms with difficulty < 8
+// game.gyms.forEach(gym => {
+//   if (gym.difficulty < 8) {
+//     gym.completed = true;  // Mark as completed if difficulty < 8
+//   }
+// });
+
+// // Print the gyms array
+// console.log(game.gyms);
+
+// // Call gymStatus to log the updated tally of completed and incomplete gyms
+// game.gymStatus();
+
+// // Log the entire game object (this will show gyms and other properties)
+// console.log(game);
+
+// // Successfully printed completed 7, incomplete 1
